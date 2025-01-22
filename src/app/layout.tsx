@@ -9,8 +9,12 @@ const ibmPlex = IBM_Plex_Sans({
   variable: "--font-ibm-plex",
 });
 
+//!! CHANGE ME
+const sub = "sub";
+const domain = "https://www.intxr.net";
+
 export const metadata: Metadata = {
-  title: "the intxrnet",
+  title: `${sub} intxrnet`,
   description: "Free, Open-Source, Client-Side Web Tools",
   keywords:
     "web tools, open source, client-side, development tools, browser tools",
@@ -18,22 +22,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.intxr.net",
-    siteName: "the intxrnet",
-    title: "the intxrnet",
+    url: domain,
+    siteName: `${sub} intxrnet`,
+    title: `${sub} intxrnet`,
     description: "Free, Open-Source, Client-Side Web Tools",
     images: [
       {
         url: "/image.png",
         width: 800,
         height: 800,
-        alt: "the intxrnet - Free, Open-Source, Client-Side Web Tools",
+        alt: `${sub} intxrnet - Free, Open-Source, Client-Side Web Tools`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "the intxrnet",
+    title: `${sub} intxrnet`,
     description: "Free, Open-Source, Client-Side Web Tools",
     images: ["/icon.png"],
     creator: "@intxrnet",
@@ -63,16 +67,20 @@ export const metadata: Metadata = {
 
 function Header() {
   return (
-    <header className="fixed w-full text-center py-4">
-      <h1 className="text-xl">
-        <Link href="https://template.intxr.net" className="hover:underline">
-          template
+    <header className="fixed top-0 left-0 right-0 h-16 flex items-center bg-background z-10 px-4">
+      <h1 className="text-xl flex-1 flex justify-end">
+        <Link href={`https://${sub}.intxr.net`} className="hover:underline">
+          &lt;{`${sub}`}&gt;
         </Link>
+      </h1>
+      <h1 className="text-xl">
         .
         <Link href="https://www.intxr.net" className="hover:underline">
           intxr
         </Link>
         .
+      </h1>
+      <h1 className="text-xl flex-1 flex justify-start">
         <Link href="https://net.intxr.net" className="hover:underline">
           net
         </Link>
@@ -83,7 +91,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="fixed bottom-2 left-0 right-0 h-4 px-4 flex justify-between items-center text-gray-500 bg-background mb-2">
+    <footer className="fixed bottom-2 left-0 right-0 h-8 flex justify-between items-center px-4 text-gray-500 bg-background z-10">
       <Link
         href="https://github.com/intxrnet"
         className="hover:underline"
@@ -111,9 +119,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={ibmPlex.variable}>
-      <body className="min-h-screen">
+      <body className="flex flex-col min-h-screen overflow-hidden">
         <Header />
-        <main className="pb-4">{children}</main>
+        <div className="h-16" aria-hidden="true"></div>
+        <main className="flex-1 flex flex-col">{children}</main>
+        <div className="h-8" aria-hidden="true"></div>
         <Footer />
       </body>
     </html>
