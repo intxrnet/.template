@@ -2,6 +2,7 @@ import Link from "next/link";
 
 interface CloudItem {
   text: string;
+  description?: string;
 }
 
 interface CenterCloudProps {
@@ -26,9 +27,17 @@ export default function CenterCloud({ items }: CenterCloudProps) {
       </Link>
       <ul className="space-y-2 text-center">
         {items.map((item, index) => (
-          <li key={index}>
-            <Link href={formatHref(item.text)} className="hover:underline">
+          <li key={index} className="relative">
+            <Link
+              href={formatHref(item.text)}
+              className="hover:underline group"
+            >
               {item.text}
+              {item.description && (
+                <div className="hidden group-hover:block absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-white border border-gray-200 rounded shadow-lg min-w-max z-10">
+                  {item.description}
+                </div>
+              )}
             </Link>
           </li>
         ))}
