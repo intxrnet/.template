@@ -6,9 +6,9 @@ export default function Home() {
       <div className="h-[4vh]"></div>
       <CenterCloud
         items={[
-          { text: "first item" },
-          { text: "second item" },
-          { text: "third item" },
+          { text: "first item", description: "first item description" },
+          { text: "second item", description: "second item description" },
+          { text: "third item", description: "third item description" },
         ]}
       ></CenterCloud>
     </div>
