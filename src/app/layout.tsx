@@ -70,7 +70,7 @@ function Header() {
     <header className="fixed top-0 left-0 right-0 h-16 flex items-center bg-background z-10 px-4">
       <h1 className="text-xl flex-1 flex justify-end">
         <Link href={`https://${sub}.intxr.net`} className="hover:underline">
-          &lt;{`${sub}`}&gt;
+          {`${sub}`}
         </Link>
       </h1>
       <h1 className="text-xl">
