@@ -17,7 +17,7 @@ export default function CenterCloud({ items }: CenterCloudProps) {
   };
 
   return (
-    <div className="relative border border-gray-300 p-4 rounded-lg w-1/2">
+    <div className="relative border border-gray-300 p-4 rounded-lg w-1/4">
       <Link
         href={titleLink}
         className="absolute -top-3 center-2 bg-white px-2 text-sm hover:underline"
