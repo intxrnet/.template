@@ -11,7 +11,7 @@ const ibmPlex = IBM_Plex_Sans({
 
 //!! CHANGE ME
 const sub = "sub";
-const domain = "https://www.intxr.net";
+const domain = `https://${sub}.intxr.net`;
 
 export const metadata: Metadata = {
   title: `${sub} intxrnet`,
