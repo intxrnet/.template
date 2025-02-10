@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prebuild": "ts-node assets.ts"
+    "prebuild": "node -r ts-node/register assets.ts"
   },
   "dependencies": {
     "react": "^19.0.0",
