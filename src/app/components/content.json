@@ -1,16 +1,16 @@
 {
   "items": [
     {
-      "text": "first item",
-      "description": "first item description"
+      "text": "template item 1",
+      "description": "template item 1 description"
     },
     {
-      "text": "second item",
-      "description": "second item description"
+      "text": "template item 2",
+      "description": "template item 2 description"
     },
     {
-      "text": "third item",
-      "description": "third item description"
+      "text": "template item 3",
+      "description": "template item 3 description"
     }
   ]
 }
