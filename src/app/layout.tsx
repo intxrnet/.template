@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import * as fs from "fs";
+import * as path from "path";
 
 const ibmPlex = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -9,8 +11,10 @@ const ibmPlex = IBM_Plex_Sans({
   variable: "--font-ibm-plex",
 });
 
-//!! CHANGE ME
-const sub = "sub";
+// Read package.json synchronously at module level
+const packagePath = path.join(process.cwd(), "package.json");
+const packageJson = JSON.parse(fs.readFileSync(packagePath, "utf-8"));
+const sub = packageJson.name;
 const domain = `https://${sub}.intxr.net`;
 
 export const metadata: Metadata = {
@@ -60,16 +64,34 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   alternates: {
-    canonical: "https://www.intxr.net",
+    canonical: domain,
   },
-  metadataBase: new URL("https://www.intxr.net"),
+  metadataBase: new URL(domain),
 };
+
+async function getPackageInfo() {
+  const packagePath = path.join(process.cwd(), "package.json");
+  try {
+    const rawContent = fs.readFileSync(packagePath, "utf-8");
+    const packageJson = JSON.parse(rawContent);
+    return {
+      name: packageJson.name,
+      description: packageJson.description || "No description available",
+    };
+  } catch (error) {
+    console.error("Error reading package.json:", error);
+    return {
+      name: "Unknown",
+      description: "Error reading package info",
+    };
+  }
+}
 
 function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 h-16 flex items-center bg-background z-10 px-4">
       <h1 className="text-xl flex-1 flex justify-end">
-        <Link href={`https://${sub}.intxr.net`} className="hover:underline">
+        <Link href="/" className="hover:underline">
           {`${sub}`}
         </Link>
       </h1>
@@ -112,13 +134,19 @@ function Footer() {
   );
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const packageInfo = await getPackageInfo();
+
   return (
     <html lang="en" className={ibmPlex.variable}>
+      <head>
+        <title>{packageInfo.name}</title>
+        <meta name="description" content={packageInfo.description} />
+      </head>
       <body className="flex flex-col min-h-screen overflow-hidden">
         <Header />
         <div className="h-16" aria-hidden="true"></div>

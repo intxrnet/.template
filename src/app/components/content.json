@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "text": "first item",
+      "description": "first item description"
+    },
+    {
+      "text": "second item",
+      "description": "second item description"
+    },
+    {
+      "text": "third item",
+      "description": "third item description"
+    }
+  ]
+}
