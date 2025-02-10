@@ -113,7 +113,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="fixed bottom-2 left-0 right-0 h-8 flex justify-between items-center px-4 text-gray-500 bg-background z-10">
+    <footer className="fixed bottom-0 left-0 right-0 h-8 flex justify-between items-center px-4 text-gray-500 bg-background z-10">
       <Link
         href="https://github.com/intxrnet"
         className="hover:underline"
@@ -147,7 +147,7 @@ export default async function RootLayout({
         <title>{packageInfo.name}</title>
         <meta name="description" content={packageInfo.description} />
       </head>
-      <body className="flex flex-col min-h-screen overflow-hidden">
+      <body className="flex flex-col flex-grow">
         <Header />
         <div className="h-16" aria-hidden="true"></div>
         <main className="flex-1 flex flex-col">{children}</main>

@@ -33,7 +33,7 @@ export default async function Home() {
   const content = await getContent();
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen">
+    <div className="flex flex-col items-center justify-start">
       <div className="h-[4vh]"></div>
       <CenterCloud items={content.items} />
     </div>
