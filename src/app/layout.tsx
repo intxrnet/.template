@@ -22,8 +22,8 @@ const ibmPlex = IBM_Plex_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
+    default: siteMetadata.title + " / intxr",
+    template: `%s | ${siteMetadata.title} / intxr`,
   },
   description: siteMetadata.description,
   keywords: keywords,
@@ -99,7 +99,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className={ibmPlex.variable}>
-      <body className="flex flex-col flex-grow">
+      <body className="flex flex-col min-h-screen">
         <Header />
         <div className="h-16" aria-hidden="true"></div>
         <main className="flex-1 flex flex-col">{children}</main>
