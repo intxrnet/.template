@@ -135,3 +135,66 @@ export const robotsConfig = {
 };
 
 export const title = content.name;
+
+// Extract and export descriptions from content
+export const descriptions = Object.entries(content).reduce(
+  (acc, [key, item]) => {
+    if (
+      typeof item === "object" &&
+      "description" in item &&
+      typeof item.description === "string"
+    ) {
+      acc[key] = {
+        text: item.description,
+        route: `/${key.toLowerCase()}`,
+      };
+    }
+    return acc;
+  },
+  {} as Record<string, { text: string; route: string }>
+);
+
+// Sitemap configuration
+export const sitemapConfig = {
+  siteUrl: BASE_URL,
+  generateRobotsTxt: true,
+  routes: Object.values(descriptions).map(({ route }) => ({
+    url: route,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  })),
+  additionalRoutes: [
+    {
+      url: "/",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 1.0,
+    },
+  ],
+};
+
+// Meta tags for dynamic routes
+export const getRouteMetadata = (route: string) => {
+  const routeKey = Object.keys(descriptions).find(
+    (key) => descriptions[key].route === route
+  );
+
+  if (!routeKey) return null;
+
+  return {
+    title: routeKey,
+    description: descriptions[routeKey].text,
+    openGraph: {
+      ...openGraph,
+      title: routeKey,
+      description: descriptions[routeKey].text,
+      url: `${BASE_URL}${route}`,
+    },
+    twitter: {
+      ...twitter,
+      title: routeKey,
+      description: descriptions[routeKey].text,
+    },
+  };
+};

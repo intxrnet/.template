@@ -9,7 +9,9 @@ import {
   twitter,
   icons,
   keywords,
+  robotsConfig,
 } from "./metadata";
+import { Robots } from "next/dist/lib/metadata/types/metadata-types";
 
 const ibmPlex = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -39,18 +41,8 @@ export const metadata: Metadata = {
 
   // Manifest
   manifest: "/manifest.json",
-  // Robots
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  // Robots - use the imported config instead of duplicating
+  robots: robotsConfig as Robots,
 };
 
 function Header() {
