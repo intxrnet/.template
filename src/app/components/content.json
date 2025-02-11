@@ -1,16 +1,11 @@
 {
+  "name": "template",
   "items": [
-    {
-      "text": "template item 1",
-      "description": "template item 1 description"
-    },
-    {
-      "text": "template item 2",
-      "description": "template item 2 description"
-    },
-    {
-      "text": "template item 3",
-      "description": "template item 3 description"
-    }
+    { "text": "template item 1", "description": "template item 1 description" },
+    { "text": "template item 2", "description": "template item 2 description" },
+    { "text": "template item 3", "description": "template item 3 description" },
+    { "text": "template item 4", "description": "template item 4 description" },
+    { "text": "template item 5", "description": "template item 5 description" },
+    { "text": "template item 6", "description": "template item 6 description" }
   ]
 }
