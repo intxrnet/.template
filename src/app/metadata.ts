@@ -8,10 +8,11 @@ const BASE_URL = `https://${SUB}.intxr.net`;
 // Construct site metadata object
 export const siteMetadata = {
   title: SUB,
-  description: `Free, Open-Source, Client-Side ${SUB} Tools`.replace(
-    /\b\w/g,
-    (l) => l.toUpperCase()
-  ),
+  description:
+    `Free, Open-Source, Private,Client-Side ${SUB} Tools. Made with love and kindness by makers of its-ours.org`.replace(
+      /\b\w/g,
+      (l) => l.toUpperCase()
+    ),
   author: "Bhargav Kantheti",
   authorUrl: "https://bhargavkantheti.com",
   siteUrl: BASE_URL,
