@@ -6,14 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prebuild": "node -r ts-node/register assets.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "15.1.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "ts-node": "^10.9.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
