@@ -130,3 +130,5 @@ export const robotsConfig = {
     "max-snippet": -1,
   },
 };
+
+export const title = content.name;

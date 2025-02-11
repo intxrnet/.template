@@ -1,51 +1,45 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-import * as fs from "fs";
-import * as path from "path";
+import {
+  title,
+  siteMetadata,
+  openGraph,
+  twitter,
+  icons,
+  keywords,
+} from "./metadata";
 
 const ibmPlex = IBM_Plex_Sans({
   subsets: ["latin"],
+  variable: "--font-ibm-plex-sans",
   weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex",
 });
 
-// Read package.json synchronously at module level
-const packagePath = path.join(process.cwd(), "package.json");
-const packageJson = JSON.parse(fs.readFileSync(packagePath, "utf-8"));
-const sub = packageJson.name;
-const domain = `https://${sub}.intxr.net`;
-
 export const metadata: Metadata = {
-  title: `${sub} intxrnet`,
-  description: "Free, Open-Source, Client-Side Web Tools",
-  keywords:
-    "web tools, open source, client-side, development tools, browser tools",
-  authors: [{ name: "intxrnet" }],
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: domain,
-    siteName: `${sub} intxrnet`,
-    title: `${sub} intxrnet`,
-    description: "Free, Open-Source, Client-Side Web Tools",
-    images: [
-      {
-        url: "/image.png",
-        width: 800,
-        height: 800,
-        alt: `${sub} intxrnet - Free, Open-Source, Client-Side Web Tools`,
-      },
-    ],
+  metadataBase: new URL(siteMetadata.siteUrl),
+  title: {
+    default: siteMetadata.title,
+    template: `%s | ${siteMetadata.title}`,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: `${sub} intxrnet`,
-    description: "Free, Open-Source, Client-Side Web Tools",
-    images: ["/icon.png"],
-    creator: "@intxrnet",
-  },
+  description: siteMetadata.description,
+  keywords: keywords,
+  authors: [{ name: siteMetadata.author, url: siteMetadata.authorUrl }],
+  creator: siteMetadata.author,
+
+  // Open Graph
+  openGraph,
+
+  // Twitter
+  twitter,
+
+  // Icons
+  icons,
+
+  // Manifest
+  manifest: "/manifest.json",
+  // Robots
   robots: {
     index: true,
     follow: true,
@@ -57,42 +51,14 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  manifest: "/manifest.json",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
-  },
-  alternates: {
-    canonical: domain,
-  },
-  metadataBase: new URL(domain),
 };
-
-async function getPackageInfo() {
-  const packagePath = path.join(process.cwd(), "package.json");
-  try {
-    const rawContent = fs.readFileSync(packagePath, "utf-8");
-    const packageJson = JSON.parse(rawContent);
-    return {
-      name: packageJson.name,
-      description: packageJson.description || "No description available",
-    };
-  } catch (error) {
-    console.error("Error reading package.json:", error);
-    return {
-      name: "Unknown",
-      description: "Error reading package info",
-    };
-  }
-}
 
 function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 h-16 flex items-center bg-background z-10 px-4">
       <h1 className="text-xl flex-1 flex justify-end">
         <Link href="/" className="hover:underline">
-          {`${sub}`}
+          {`${title}`}
         </Link>
       </h1>
       <h1 className="text-xl">
@@ -139,14 +105,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const packageInfo = await getPackageInfo();
-
   return (
     <html lang="en" className={ibmPlex.variable}>
-      <head>
-        <title>{packageInfo.name}</title>
-        <meta name="description" content={packageInfo.description} />
-      </head>
       <body className="flex flex-col flex-grow">
         <Header />
         <div className="h-16" aria-hidden="true"></div>
