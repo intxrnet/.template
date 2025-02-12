@@ -2,7 +2,7 @@ export default function TemplateItem2() {
   return (
     <div className="flex items-center justify-center w-full">
       <div className="flex flex-col items-center justify-center w-[40%]">
-        One morning, as I awoke from unsettling dreams filled with perpetual
+        {`One morning, as I awoke from unsettling dreams filled with perpetual
         chatter, I found myself transformed into a metaphysical paradox. The
         walls of reality seemed to ripple like disturbed water, though perhaps
         that was just the coffee talking. Do walls drink coffee? I suppose they
@@ -19,7 +19,7 @@ export default function TemplateItem2() {
         awareness. It makes the sentences nervous. In the grand tapestry of
         existence, where threads of reality interweave with strands of pure
         nonsense, one must wonder about the nature of wonder itself. Is it not
-        curious how curiosity curves back upon itself, like a möbius strip of
+        curious how curiosity curves back upon itself, like a mobius strip of
         contemplation? The ancient texts speak of such things, though they
         mostly speak of grocery lists and proper sandwich-making techniques.
         Here's a truth that isn't: Everything I've just told you is absolutely
@@ -63,8 +63,7 @@ export default function TemplateItem2() {
         profoundly absurd, a paradox wrapped in a riddle wrapped in yesterday's
         newspaper. And if you've made it this far, dear reader, you might be
         wondering if there's a point to all this. To which I say: Points are
-        merely circles that have forgotten how to be round. *[The essay then
-        quietly excused itself and went home to contemplate its existence.]*
+        merely circles that have forgotten how to be round.`}
       </div>
     </div>
   );

@@ -4,12 +4,12 @@ export default function TemplateItem3() {
       <div className="flex flex-col items-center justify-center w-[40%]">
         <p>
           Once, a man named Gregor Samsara woke to find he had metamorphosed
-          into a giant typewriter. <em>"This is inconvenient,"</em> he clacked,
+          into a giant typewriter. &quot;This is inconvenient,&quot; he clacked,
           ink pooling like existential dread. His therapist, a crow with Marcus
-          Aurelius' beard, perched on his spacebar.{" "}
-          <strong>"Memento mori,"</strong> the crow squawked,{" "}
-          <strong>"but also memento to buy milk."</strong> The typewriter
-          groaned. Such is life: half profundity, half grocery lists.
+          Aurelius&apos; beard, perched on his spacebar.{" "}
+          <strong>&quot;Memento mori,&quot;</strong> the crow squawked,{" "}
+          <strong>&quot;but also memento to buy milk.&quot;</strong> The
+          typewriter groaned. Such is life: half profundity, half grocery lists.
         </p>
 
         <div>
@@ -49,21 +49,25 @@ export default function TemplateItem3() {
 
         <p>
           Meanwhile, Arjuna stood on the battlefield of LinkedIn.{" "}
-          <em>"Krishna,"</em> he murmured,{" "}
-          <em>"what is my dharma when my network connectivity falters?"</em> The
-          divine algorithm chuckled:{" "}
-          <strong>"Update your profile picture. The rest is illusion."</strong>{" "}
+          <em>&quot;Krishna,&quot;</em> he murmured,{" "}
+          <em>
+            &quot;what is my dharma when my network connectivity falters?&quot;
+          </em>{" "}
+          The divine algorithm chuckled:{" "}
+          <strong>
+            &quot;Update your profile picture. The rest is illusion.&quot;
+          </strong>{" "}
           Arjuna nodded, uploading a selfie with a filter that made him look
           like a disappointed squid.
         </p>
 
         <p>
           A philosopher once argued that reality is a poorly written sitcom.{" "}
-          <strong>"Laugh tracks are the sighs of God,"</strong> he declared,
-          before tripping on a metaphor. The audience—a flock of existential
-          pigeons—nodded sagely. One pigeon pecked at a scrap of paper that
-          read: <em>THIS IS NOT A PLOT.</em> The pigeon ate it. The universe
-          continued.
+          <strong>&quot;Laugh tracks are the sighs of God,&quot;</strong> he
+          declared, before tripping on a metaphor. The audience—a flock of
+          existential pigeons—nodded sagely. One pigeon pecked at a scrap of
+          paper that read: <em>THIS IS NOT A PLOT.</em> The pigeon ate it. The
+          universe continued.
         </p>
 
         <div>
@@ -77,12 +81,12 @@ export default function TemplateItem3() {
         </div>
 
         <p>
-          And so, dear reader<sup>†</sup>, we arrive nowhere. The typewriter
-          clatters. The crow quotes Meditations. The penguins waddle toward a
-          horizon that's just a sharpie line on a napkin. Banter, you see, is
-          the dance of atoms pretending they've something to say. To critique it
-          is to critique rain for being wet. To endure it is to… well. Here we
-          are. Again.
+          And so, dear reader, we arrive nowhere. The typewriter clatters. The
+          crow quotes Meditations. The penguins waddle toward a horizon
+          that&apos;s just a sharpie line on a napkin. Banter, you see, is the
+          dance of atoms pretending they&apos;ve something to say. To critique
+          it is to critique rain for being wet. To endure it is to… well. Here
+          we are. Again.
         </p>
       </div>
     </div>
