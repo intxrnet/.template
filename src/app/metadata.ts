@@ -18,7 +18,7 @@ export const siteMetadata = {
   siteUrl: BASE_URL,
   siteName: SUB,
   siteRepo: `https://github.com/intxrnet/${SUB}`,
-  socialBanner: `${BASE_URL}/og.png`,
+  socialBanner: `${BASE_URL}/og.svg`,
 };
 
 // Generate keywords from content descriptions
@@ -74,7 +74,7 @@ export const twitter = {
 // Icons and manifest related metadata
 export const icons = {
   icon: [{ url: "/icon.svg" }, { url: "/favicon.ico" }],
-  apple: [{ url: "/apple-touch-icon.png" }],
+  apple: [{ url: "/icon.png" }],
   shortcut: [{ url: "/favicon.ico" }],
 };
 
@@ -115,7 +115,7 @@ export const manifestConfig = {
       type: "image/svg+xml",
     },
     {
-      src: "/apple-touch-icon.png",
+      src: "/icon.png",
       sizes: "180x180",
       type: "image/png",
     },
